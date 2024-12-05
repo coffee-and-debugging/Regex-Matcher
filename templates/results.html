@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regex Results</title>
+    <title>Regex Matcher Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
 </head>
 <body>
-    <h1>Results</h1>
-    <p><strong>Test String:</strong> {{ test_string }}</p>
-    <p><strong>Regex:</strong> {{ regex }}</p>
-
-    {% if matches %}
+    <h1>Regex Matcher Results</h1>
+    <div class="results-container">
+        <p><strong>Test String:</strong> {{ test_string }}</p>
+        <p><strong>Regex:</strong> {{ regex }}</p>
         <h2>Matches Found:</h2>
-        <ul>
-            {% for match in matches %}
-                <li>{{ match }}</li>
-            {% endfor %}
+        <ul class="results-list">
+            {% if matches %}
+                {% for match in matches %}
+                    <li>{{ match }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No matches found.</li>
+            {% endif %}
         </ul>
-    {% else %}
-        <p>No matches found.</p>
-    {% endif %}
-    
-    <a href="/">Back</a>
+    </div>
+    <a href="/" class="back-button">Back to Home</a>
 </body>
 </html>

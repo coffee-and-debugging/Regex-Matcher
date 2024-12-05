@@ -1,60 +1,125 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 h1 {
-    color: #4CAF50;
     text-align: center;
+    color: #4CAF50;
 }
 
 form {
     max-width: 400px;
     margin: 20px auto;
-    padding: 40px;
-    border: 5px solid #ccc;
+    padding: 30px;
+    border: 1px solid #ddd;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-label {
+form label {
     display: block;
-    margin: 10px 0 5px;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-weight: bold;
 }
 
-button {
+form input[type="text"],
+form button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+    margin: 10px 0;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    cursor: pointer;
+    box-sizing: border-box;
 }
 
-button:hover {
+form button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
     background-color: #45a049;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.results-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-ul li {
-    background: #e8e8e8;
+.results-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #333;
+}
+
+.results-container h2 {
+    margin-top: 20px;
+    color: #4CAF50;
+}
+
+.results-list {
+    list-style-type: disc;
+    margin: 10px 0 0 20px;
+    padding: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.results-list li {
     margin: 5px 0;
-    padding: 8px;
-    border-radius: 4px;
+}
+
+.menu {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #2196F3;
+    padding: 10px 20px;
+    border: 1px solid #2196F3;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+.back-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #1976D2;
 }
