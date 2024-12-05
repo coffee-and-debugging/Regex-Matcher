@@ -4,21 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regex Matcher</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Regex Matcher</h1>
-    <form action="/results" method="post">
-        <label for="test_string">Test String:</label>
-        <input type="text" id="test_string" name="test_string" required>
-        
-        <label for="regex">Regex:</label>
-        <input type="text" id="regex" name="regex" required>
-        
-        <button type="submit">Match Regex</button>
-    </form>
-    <div class="menu">
-        <a href="/validate-email">Go to Email Validator</a>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="w-full max-w-lg bg-gray-800 rounded-lg shadow-lg p-8">
+            <h1 class="text-3xl font-bold text-center text-green-400 mb-6">Regex Matcher</h1>
+            
+            <form action="/results" method="POST" class="space-y-4">
+                <div>
+                    <label for="test_string" class="block text-sm font-medium">Test String</label>
+                    <textarea id="test_string" name="test_string" rows="4" 
+                        class="w-full p-2 rounded-md bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
+                </div>
+                <div>
+                    <label for="regex" class="block text-sm font-medium">Regex</label>
+                    <input id="regex" name="regex" type="text" 
+                        class="w-full p-2 rounded-md bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-400">
+                </div>
+                <button type="submit" 
+                    class="w-full py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md transition duration-200">
+                    Find Matches
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center">
+                <a href="/validate-email" 
+                    class="text-green-400 hover:text-green-300 font-semibold underline">
+                    Validate Email
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

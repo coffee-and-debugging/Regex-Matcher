@@ -19,12 +19,16 @@ def results():
 
 @app.route('/validate-email', methods=['GET', 'POST'])
 def validate_email():
+    result = None
     if request.method == 'POST':
-        email = request.form['email']
-        email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-        is_valid = re.match(email_regex, email) is not None
-        return render_template('validate_email.html', email=email, is_valid=is_valid)
-    return render_template('validate_email.html', email=None, is_valid=None)
+        email = request.form.get('email', '')
+        email_regex = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        if re.match(email_regex, email):
+            result = f"'{email}' is a valid email address."
+        else:
+            result = f"'{email}' is not a valid email address."
+    return render_template('validate_email.html', result=result)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
